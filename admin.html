@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель — Подножный корм</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="img/logo.jpeg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brown: #5D3A1A; --green: #4CAF50; --green-dark: #388E3C;
+      --cream: #FAF7F2; --white: #fff; --text: #2D2D2D; --muted: #6B6B6B;
+      --border: #E8E0D4; --bg-alt: #F5F0E8; --red: #E53935;
+      --shadow-sm: 0 1px 3px rgba(93,58,26,.08); --shadow-md: 0 4px 12px rgba(93,58,26,.1);
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.5; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    button { cursor: pointer; font-family: inherit; }
+    input, select { font-family: inherit; font-size: .95rem; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; width: 100%; }
+    input:focus, select:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(76,175,80,.1); }
+    label { display: block; font-size: .85rem; font-weight: 500; margin-bottom: 4px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; border-radius: 10px; font-weight: 500; font-size: .9rem; border: none; transition: all .2s; text-decoration: none; }
+    .btn--primary { background: var(--green); color: #fff; }
+    .btn--primary:hover { background: var(--green-dark); }
+    .btn--outline { border: 2px solid var(--brown); color: var(--brown); background: transparent; }
+    .btn--outline:hover { background: var(--brown); color: #fff; }
+    .btn--danger { background: var(--red); color: #fff; }
+    .btn--sm { padding: 6px 12px; font-size: .8rem; }
+    .hidden { display: none !important; }
+
+    /* Логин */
+    .login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .login-card { background: var(--white); border-radius: 20px; padding: 40px; width: 100%; max-width: 400px; box-shadow: var(--shadow-md); }
+    .login-card img { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 16px; object-fit: cover; }
+    .login-card h1 { font-size: 1.3rem; text-align: center; color: var(--brown); margin-bottom: 8px; }
+    .login-card p.sub { text-align: center; color: var(--muted); font-size: .9rem; margin-bottom: 24px; }
+    .login-card form { display: flex; flex-direction: column; gap: 14px; }
+    .login-error { color: var(--red); font-size: .85rem; text-align: center; }
+
+    /* Шапка админки */
+    .admin-header { background: var(--brown); color: #fff; padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    .admin-header .inner { display: flex; align-items: center; gap: 16px; }
+    .admin-header img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+    .admin-header h1 { font-size: 1.1rem; font-weight: 600; }
+    .admin-header .spacer { flex: 1; }
+    .admin-header a, .admin-header button { color: rgba(255,255,255,.85); font-size: .85rem; }
+    .admin-header a:hover, .admin-header button:hover { color: #fff; }
+
+    main { padding: 32px 0 64px; }
+    h2 { font-size: 1.2rem; color: var(--brown); margin-bottom: 16px; }
+
+    /* Статистика */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .stat-card { background: var(--white); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
+    .stat-card .label { font-size: .8rem; color: var(--muted); margin-bottom: 4px; }
+    .stat-card .value { font-size: 1.8rem; font-weight: 700; color: var(--brown); }
+    .stat-card .value.green { color: var(--green-dark); }
+
+    /* Таблица пользователей */
+    .panel { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 24px; }
+    .panel__head { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .panel__head h2 { margin: 0; flex: 1; }
+    .panel__head input[type="search"] { width: 240px; }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    th { text-align: left; padding: 10px 16px; color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr.blocked-row { opacity: .55; background: #FFF5F5; }
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: .72rem; font-weight: 600; }
+    .badge--ok { background: #E8F5E9; color: #2E7D32; }
+    .badge--blocked { background: #FFEBEE; color: #C62828; }
+    .actions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .empty { text-align: center; color: var(--muted); padding: 40px !important; }
+
+    /* Модалка */
+    .modal { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal.active { display: flex; }
+    .modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.5); }
+    .modal__panel { position: relative; background: #fff; border-radius: 16px; padding: 28px; width: 100%; max-width: 460px; max-height: 85vh; overflow-y: auto; }
+    .modal__close { position: absolute; top: 12px; right: 12px; font-size: 1.4rem; color: var(--muted); width: 32px; height: 32px; border-radius: 50%; }
+    .modal__close:hover { background: var(--bg-alt); }
+    .modal__panel h3 { color: var(--brown); margin-bottom: 16px; font-size: 1.1rem; }
+    .modal__panel form { display: flex; flex-direction: column; gap: 12px; }
+    .detail-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: .9rem; }
+    .detail-row span:first-child { color: var(--muted); }
+    .history-table { margin-top: 12px; }
+
+    /* Лог операций */
+    .log-item { padding: 10px 16px; border-bottom: 1px solid var(--border); font-size: .82rem; }
+    .log-item:last-child { border-bottom: none; }
+    .log-item .time { color: var(--muted); margin-right: 10px; white-space: nowrap; }
+    .note { font-size: .8rem; color: var(--muted); margin-top: 8px; }
+    @media (max-width: 700px) {
+      .panel__head input[type="search"] { width: 100%; }
+      table { font-size: .78rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Экран входа / создания аккаунта -->
+  <div class="login-wrap" id="loginScreen">
+    <div class="login-card">
+      <img src="img/logo.jpeg" alt="Подножный корм">
+      <h1>Админ-панель</h1>
+      <p class="sub" id="loginSub">Вход для сотрудников кафе «Подножный корм»</p>
+      <form id="loginForm" action="#" novalidate>
+        <div>
+          <label for="adminLogin">Телефон или email</label>
+          <input type="text" id="adminLogin" autocomplete="username" required>
+        </div>
+        <div>
+          <label for="adminPass">Пароль</label>
+          <input type="password" id="adminPass" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn--primary" id="loginSubmitBtn">Войти</button>
+        <p class="login-error" id="loginError"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Панель -->
+  <div id="adminPanel" class="hidden">
+    <header class="admin-header">
+      <div class="container inner">
+        <img src="img/logo.jpeg" alt="">
+        <h1>Админ-панель · Подножный корм</h1>
+        <span class="spacer"></span>
+        <a href="index.html">← На сайт</a>
+        <button id="logoutAdmin">Выйти</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Статистика -->
+      <div class="stats" id="statsRow"></div>
+
+      <!-- Пользователи -->
+      <div class="panel">
+        <div class="panel__head">
+          <h2>Зарегистрированные пользователи</h2>
+          <input type="search" id="userSearch" placeholder="Поиск по имени или телефону…">
+          <button class="btn btn--outline btn--sm" id="exportCsv">Экспорт CSV</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th><th>Имя</th><th>Телефон</th><th>Email</th>
+                <th>Бонусы</th><th>Заказы</th><th>Регистрация</th><th>Статус</th><th>Действия</th>
+              </tr>
+            </thead>
+            <tbody id="usersBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Журнал операций -->
+      <div class="panel">
+        <div class="panel__head"><h2>Журнал критичных операций</h2></div>
+        <div id="logList"></div>
+      </div>
+
+      <p class="note">⚠️ Демо-режим: данные хранятся в localStorage браузера. Для боевого запуска подключите backend API (см. схему БД в концепции).</p>
+    </main>
+  </div>
+
+  <!-- Модалка: карточка пользователя -->
+  <div class="modal" id="userModal">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close aria-label="Закрыть">&times;</button>
+      <h3 id="userModalTitle">Карточка пользователя</h3>
+      <div id="userDetailInfo"></div>
+      <h3 style="margin-top:20px;">История бонусов</h3>
+      <table class="history-table">
+        <thead><tr><th>Дата</th><th>Операция</th><th>Сумма</th></tr></thead>
+        <tbody id="userHistoryBody"></tbody>
+      </table>
+      <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;">
+      <form id="adjustForm" action="#">
+        <div>
+          <label for="adjustAmount">Корректировка бонусов (+ начислить / − списать)</label>
+          <input type="number" id="adjustAmount" placeholder="Например: 50 или -20" required>
+        </div>
+        <div>
+          <label for="adjustComment">Комментарий (обязательно)</label>
+          <input type="text" id="adjustComment" placeholder="Причина корректировки" required>
+        </div>
+        <button type="submit" class="btn btn--primary">Применить корректировку</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
