@@ -3,20 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Подножный корм — кафе здорового питания в Сириусе</title>
-  <meta name="description" content="Кафе здорового питания «Подножный корм» в Сириусе. Завтраки без сахара, авторские напитки, десерты без глютена и лактозы. Бонусная программа с QR-кодом. Ежедневно 08:00–20:00.">
-  <meta property="og:title" content="Подножный корм — кафе здорового питания в Сириусе">
-  <meta property="og:description" content="Завтраки без сахара, авторские напитки, десерты без глютена и лактозы. Бонусная программа с QR-кодом. Ежедневно 08:00–20:00.">
-  <meta property="og:image" content="https://podnozhnyi-korm.tuqo.app/img/og-image.jpg">
+  <title>Подножный корм — здоровое кафе в Сириусе | десерты без сахара</title>
+  <meta name="description" content="Здоровое кафе в Сириусе: завтраки без сахара, авторские напитки, RAW-десерты без глютена и лактозы. Заказ тортов на праздник. Скидка 10% за игру. Ежедневно 08:00–20:00.">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://podnozhnyi-korm.tuqo.app/">
+  <meta property="og:site_name" content="Подножный корм">
+  <meta property="og:title" content="Подножный корм — здоровое кафе в Сириусе">
+  <meta property="og:description" content="Завтраки без сахара, авторские напитки и RAW-десерты без глютена и лактозы. Заказ тортов на праздник. Скидка 10% за прохождение игры.">
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://podnozhnyj-korm.ru/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Подножный корм — здоровое кафе в Сириусе">
+  <meta name="twitter:description" content="Завтраки без сахара, авторские напитки и RAW-десерты. Заказ тортов на праздник.">
+  <meta name="twitter:image" content="img/og-image.jpg">
+
   <link rel="icon" href="img/logo.jpeg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -24,560 +34,803 @@
     "name": "Подножный корм",
     "description": "Кафе здорового питания в Сириусе",
     "servesCuisine": ["Здоровое питание", "Завтраки", "Кофе", "Десерты"],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ул. Цимлянская, 12к13",
-      "addressLocality": "Сириус",
-      "addressRegion": "Краснодарский край",
-      "postalCode": "354349",
-      "addressCountry": "RU"
-    },
+    "address": {"@type": "PostalAddress", "streetAddress": "ул. Цимлянская, 12к13", "addressLocality": "Сириус", "addressRegion": "Краснодарский край", "postalCode": "354349", "addressCountry": "RU"},
     "telephone": "+79220266646",
     "openingHours": "Mo-Su 08:00-20:00",
     "url": "https://t.me/podnozhnyj_korm",
-    "priceRange": "₽₽",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "34"
-    }
+    "priceRange": "₽₽"
   }
   </script>
 </head>
 <body>
-  <!-- Хедер -->
+
+  <div class="preloader" id="preloader"><div class="preloader__spinner"></div></div>
+
+  <!-- Header -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#" class="header__logo" aria-label="Подножный корм — на главную">
-        <img src="img/logo.jpeg" alt="Логотип кафе Подножный корм" width="48" height="48" loading="eager">
+      <a href="#" class="header__logo" aria-label="Подножный корм">
+        <img src="img/logo.jpeg" alt="Подножный корм" width="40" height="40">
         <span class="header__logo-text">Подножный<br><strong>корм</strong></span>
       </a>
-      <nav class="header__nav" aria-label="Основная навигация">
+      <nav class="header__nav" aria-label="Навигация">
+        <a href="#benefits" class="header__link">Польза</a>
         <a href="#menu" class="header__link">Меню</a>
-        <a href="#concept" class="header__link">О кафе</a>
-        <a href="#bonus" class="header__link">Бонусы</a>
+        <a href="#game" class="header__link">Игры</a>
+        <a href="#cake" class="header__link">Заказать торт</a>
+        <a href="#afisha" class="header__link">Афиша</a>
         <a href="#contacts" class="header__link">Контакты</a>
       </nav>
-      <div class="header__actions">
-        <button class="btn btn--outline header__cabinet-btn" id="openCabinetBtn" aria-label="Открыть личный кабинет">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <span>Личный кабинет</span>
-        </button>
-      </div>
-      <button class="header__burger" id="burgerBtn" aria-label="Открыть меню навигации" aria-expanded="false">
+      <a href="#cake" class="btn btn--primary header__cta">Заказать</a>
+      <button class="header__burger" id="burgerBtn" aria-label="Меню">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Мобильное меню -->
-  <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Мобильная навигация">
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#benefits" class="mobile-nav__link">Польза</a>
     <a href="#menu" class="mobile-nav__link">Меню</a>
-    <a href="#concept" class="mobile-nav__link">О кафе</a>
-    <a href="#bonus" class="mobile-nav__link">Бонусы</a>
+    <a href="#game" class="mobile-nav__link">🎮 Игры + скидка</a>
+    <a href="#cake" class="mobile-nav__link">Заказать торт</a>
+    <a href="#afisha" class="mobile-nav__link">Афиша</a>
     <a href="#contacts" class="mobile-nav__link">Контакты</a>
-    <button class="btn btn--primary mobile-nav__cabinet" id="openCabinetBtnMobile">Личный кабинет</button>
+    <a href="tel:+79220266646" class="btn btn--primary mobile-nav__cta">+7 (922) 026-66-46</a>
   </div>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="img/coffee-on-sand.jpg" alt="Кофе в джезве на песке — фирменный напиток кафе Подножный корм" class="hero__img" loading="eager">
+      <img src="img/drink-coffee-sand.jpg" alt="" class="hero__img" loading="eager">
       <div class="hero__overlay"></div>
     </div>
     <div class="container hero__content">
-      <h1 class="hero__title">Вкусная еда для энергии<br>и хорошего самочувствия</h1>
-      <p class="hero__subtitle">Свежие ингредиенты, сбалансированные блюда без сахара, авторские напитки и бонусы за каждый заказ</p>
+      <div class="hero__badge">☀️ Открыто сегодня · 08:00 – 20:00</div>
+      <h1 class="hero__title">Ешьте так,<br>чтобы <em>чувствовать</em><br>себя на все 100%</h1>
+      <p class="hero__subtitle">Забудьте про «диетические» муки —<br>здесь вкусно даже без сахара, без всяких секретов.<br>Свежие продукты, честные рецепты —<br>один укус — и никаких для вас запретов!</p>
       <div class="hero__buttons">
         <a href="#menu" class="btn btn--primary btn--lg">Смотреть меню</a>
-        <a href="#bonus" class="btn btn--ghost btn--lg">Получить бонусы</a>
+        <a href="#game" class="btn btn--glass btn--lg">🎮 Сыграть и получить −10%</a>
       </div>
-      <div class="hero__info">
-        <div class="hero__info-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Ежедневно 08:00 – 20:00</span>
-        </div>
-        <div class="hero__info-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>ФТ Сириус, ул. Цимлянская, 12к13</span>
-        </div>
-        <div class="hero__info-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <a href="tel:+79220266646">+7 (922) 026-66-46</a>
-        </div>
+      <div class="hero__stats">
+        <div class="hero__stat"><span class="hero__stat-num">50+</span><span class="hero__stat-label">блюд без сахара</span></div>
+        <div class="hero__stat"><span class="hero__stat-num">12</span><span class="hero__stat-label">авторских напитков</span></div>
+        <div class="hero__stat"><span class="hero__stat-num">0</span><span class="hero__stat-label">глютена в десертах</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Концепция -->
-  <section class="concept" id="concept">
+  <!-- ПОЛЬЗА -->
+  <section class="benefits" id="benefits">
     <div class="container">
-      <h2 class="section-title">Наша концепция</h2>
-      <p class="section-subtitle">Мы доказываем, что здоровая еда может быть вкусной, яркой и радостной — в каждом блюде и десерте</p>
-      <div class="concept__grid">
-        <article class="concept-card">
-          <span class="concept-card__icon" aria-hidden="true">🍀</span>
-          <h3>Классические и авторские напитки</h3>
-          <p>Чай, кофе, церемониальное какао, куркума, кофе в джезве на песке</p>
+      <div class="section-header">
+        <span class="section-tag">Почему это работает</span>
+        <h2 class="section-title">Здоровая еда ≠ скучная еда</h2>
+        <p class="section-subtitle">Мы убрали из кухни всё, что мешает вам чувствовать себя бодро, — и оставили только то, что даёт энергию</p>
+      </div>
+      <div class="bento-grid">
+        <article class="bento-card bento-card--large">
+          <div class="bento-card__emoji">🚫🍬</div>
+          <h3>Ноль добавленного сахара</h3>
+          <p>Сахар вызывает скачок глюкозы, а через час — упадок сил и желание съесть ещё сладкого. Мы заменяем его фруктами, мёдом и урбечом — вы получаете сладость без «качелей» энергии.</p>
         </article>
-        <article class="concept-card">
-          <span class="concept-card__icon" aria-hidden="true">🍰</span>
-          <h3>Десерты без сахара, глютена и лактозы</h3>
-          <p>Принимаем заказы на торты и конфеты</p>
+        <article class="bento-card">
+          <div class="bento-card__emoji">⚡</div>
+          <h3>Энергия до вечера</h3>
+          <p>Сложные углеводы + белок = ровный уровень энергии без «проседания» после обеда.</p>
         </article>
-        <article class="concept-card">
-          <span class="concept-card__icon" aria-hidden="true">🌅</span>
-          <h3>Завтраки</h3>
-          <p>Каши, сырники, смузи, омлеты, вафли, сэндвичи, боулы и другое</p>
+        <article class="bento-card">
+          <div class="bento-card__emoji">🌾</div>
+          <h3>Без глютена и лактозы</h3>
+          <p>Если у вас чувствительность к этим продуктам — у нас есть полноценное меню, а не «ну вот этот один пункт».</p>
         </article>
-        <article class="concept-card">
-          <span class="concept-card__icon" aria-hidden="true">🥤</span>
-          <h3>Лимонады и перекусы</h3>
-          <p>Без сахара, растительная продукция, дагестанский урбеч, эфирные масла, аромасвечи</p>
+        <article class="bento-card bento-card--wide">
+          <div class="bento-card__emoji">🥑</div>
+          <h3>Полезные жиры вместо трансжиров</h3>
+          <p>Авокадо, орехи, сыродавленное масло, урбеч — то, что действительно нужно вашему организму для кожи, мозга и гормонов. Никаких маргарина и пальмового масла.</p>
         </article>
-        <article class="concept-card">
-          <span class="concept-card__icon" aria-hidden="true">🎲</span>
-          <h3>Мероприятия со смыслом</h3>
-          <p>Настольные игры, просмотр фильмов, спикеры, девичники, встречи</p>
+        <article class="bento-card">
+          <div class="bento-card__emoji">🧠</div>
+          <h3>Еда для мозга</h3>
+          <p>Омега-3, антиоксиданты из ягод и зелени — пища, которая помогает думать ясно.</p>
         </article>
-        <article class="concept-card">
-          <span class="concept-card__icon" aria-hidden="true">💻</span>
-          <h3>Спокойная атмосфера</h3>
-          <p>Wi-Fi, библиотека, метафорические карты — можно поработать с ноутбуком</p>
+        <article class="bento-card bento-card--accent">
+          <div class="bento-card__emoji">😋</div>
+          <h3>И да, это вкусно</h3>
+          <p>Проверено сотнями гостей. Если бы было невкусно — они бы не возвращались.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Меню -->
+  <!-- МЕНЮ -->
   <section class="menu-section" id="menu">
     <div class="container">
-      <h2 class="section-title">Меню</h2>
-      <p class="section-subtitle">Без сахара. Свежее, полезнее, вкуснее</p>
-
-      <!-- Фильтры категорий -->
-      <div class="menu-filters" role="tablist" aria-label="Категории меню">
-        <button class="filter-btn filter-btn--active" data-category="all" role="tab" aria-selected="true">Все</button>
-        <button class="filter-btn" data-category="breakfast" role="tab" aria-selected="false">🌅 Завтраки</button>
-        <button class="filter-btn" data-category="coffee" role="tab" aria-selected="false">☕ Кофе</button>
-        <button class="filter-btn" data-category="cacao" role="tab" aria-selected="false">🍫 Какао</button>
-        <button class="filter-btn" data-category="drinks" role="tab" aria-selected="false">🌿 Напитки</button>
-        <button class="filter-btn" data-category="cold" role="tab" aria-selected="false">🧊 Освежает</button>
-        <button class="filter-btn" data-category="tea" role="tab" aria-selected="false">🍵 Чай</button>
-        <button class="filter-btn" data-category="smoothie" role="tab" aria-selected="false">🥤 Смузи</button>
-        <button class="filter-btn" data-category="desserts" role="tab" aria-selected="false">🍰 Десерты</button>
+      <div class="section-header">
+        <span class="section-tag">Что попробовать</span>
+        <h2 class="section-title">Меню, от которого не устаёте</h2>
+        <p class="section-subtitle">Каждое блюдо — сбалансировано. Белок, сложные углеводы, полезные жиры — всё в одном тарелке. Нажмите на фото, чтобы рассмотреть</p>
       </div>
 
-      <!-- Фильтры dietary -->
-      <div class="dietary-filters" aria-label="Фильтр по dietary-тегам">
-        <button class="dietary-btn" data-tag="vegan">Веган</button>
-        <button class="dietary-btn" data-tag="без глютена">Без глютена</button>
-        <button class="dietary-btn" data-tag="высокобелковое">Высокобелковое</button>
-        <button class="dietary-btn" data-tag="острое">Острое</button>
+      <div class="menu-photos" id="menuPhotos">
+        <figure class="menu-photo" data-full="img/menu-breakfast.jpg" data-caption="Завтраки">
+          <img src="img/menu-breakfast.jpg" alt="Завтраки: каши, сырники, боулы" loading="lazy">
+          <figcaption>Завтраки</figcaption>
+        </figure>
+        <figure class="menu-photo" data-full="img/menu-coffee-cacao.jpg" data-caption="Кофе и какао">
+          <img src="img/menu-coffee-cacao.jpg" alt="Кофе и какао" loading="lazy">
+          <figcaption>Кофе и какао</figcaption>
+        </figure>
+        <figure class="menu-photo" data-full="img/menu-drinks.jpg" data-caption="Напитки">
+          <img src="img/menu-drinks.jpg" alt="Авторские напитки" loading="lazy">
+          <figcaption>Напитки</figcaption>
+        </figure>
+        <figure class="menu-photo" data-full="img/menu-smoothie.jpg" data-caption="Смузи">
+          <img src="img/menu-smoothie.jpg" alt="Смузи" loading="lazy">
+          <figcaption>Смузи</figcaption>
+        </figure>
+        <figure class="menu-photo" data-full="img/menu-tea.jpg" data-caption="Чай">
+          <img src="img/menu-tea.jpg" alt="Чай" loading="lazy">
+          <figcaption>Чай</figcaption>
+        </figure>
       </div>
 
-      <!-- Список категорий -->
+      <div class="menu-filters" role="tablist" aria-label="Категории">
+        <button class="filter-btn filter-btn--active" data-category="all">Все</button>
+        <button class="filter-btn" data-category="breakfast">🌅 Завтраки</button>
+        <button class="filter-btn" data-category="coffee">☕ Кофе</button>
+        <button class="filter-btn" data-category="cacao">🍫 Какао</button>
+        <button class="filter-btn" data-category="drinks">🌿 Напитки</button>
+        <button class="filter-btn" data-category="desserts">🍰 Десерты</button>
+      </div>
+
       <div class="menu-categories" id="menuCategories"></div>
 
-      <!-- Промо -->
-      <div class="menu-promo">
-        <p>🎁 При заказе 3-х блюд из меню — <strong>американо, травяной чай или кофе в джезве в подарок</strong></p>
+      <div class="menu-promo-strip">
+        <span class="menu-promo-strip__icon">🎁</span>
+        <p>При заказе <strong>3 блюд</strong> — американо или кофе в джезве <strong>в подарок</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- Галерея напитков -->
+  <!-- ГАЛЕРЕЯ -->
   <section class="gallery" id="gallery">
     <div class="container">
-      <h2 class="section-title">Наши напитки</h2>
-      <p class="section-subtitle">Авторские рецепты, которые вы не найдёте больше нигде</p>
+      <div class="section-header">
+        <span class="section-tag">Авторские напитки</span>
+        <h2 class="section-title">То, что вы не найдёте больше нигде</h2>
+      </div>
       <div class="gallery__grid">
-        <figure class="gallery__item">
-          <img src="img/dagestan-cappuccino.jpg" alt="Дагестанский капучино с урбечем и десерт на тарелке" loading="lazy">
-          <figcaption>Дагестанский капучино</figcaption>
+        <figure class="gallery__item gallery__item--tall">
+          <img src="img/drink-dagestan-cappuccino.jpg" alt="Дагестанский капучино с урбечом" loading="lazy">
+          <figcaption>Дагестанский капучино<br><small>с горским мёдом и урбечом</small></figcaption>
         </figure>
         <figure class="gallery__item">
-          <img src="img/cacao.jpg" alt="Два стакана церемониального какао с пеной" loading="lazy">
-          <figcaption>Церемониальное какао</figcaption>
+          <img src="img/drink-cacao.jpg" alt="Церемониальное какао" loading="lazy">
+          <figcaption>Церемониальное какао<br><small>горькое, как оно должно быть</small></figcaption>
         </figure>
         <figure class="gallery__item">
-          <img src="img/cappuccino.jpg" alt="Капучино с цветами ромашки и пионов на террасе" loading="lazy">
-          <figcaption>Капучино</figcaption>
+          <img src="img/drink-cappuccino.jpg" alt="Капучино с цветами" loading="lazy">
+          <figcaption>Капучино<br><small>с ромашкой и пионами</small></figcaption>
         </figure>
-        <figure class="gallery__item">
-          <img src="img/coffee-on-sand.jpg" alt="Кофе в джезве на песке — два медных и латунных джезвы" loading="lazy">
-          <figcaption>Кофе в джезве на песке</figcaption>
+        <figure class="gallery__item gallery__item--tall">
+          <img src="img/drink-coffee-sand.jpg" alt="Кофе в джезве на песке" loading="lazy">
+          <figcaption>Кофе в джезве<br><small>на песке, по-восточному</small></figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- Десерты -->
-  <section class="desserts" id="desserts">
+  <!-- ИГРЫ -->
+  <section class="game-section" id="game">
     <div class="container">
-      <h2 class="section-title">Десерты без сахара</h2>
-      <p class="section-subtitle">Без сахара, глютена и лактозы. Принимаем заказы на торты и конфеты</p>
-      <div class="desserts__grid">
-        <figure class="dessert-card">
-          <img src="img/raw-cake.jpg" alt="Шоколадный RAW торт с ягодами: черника, малина, ежевика" loading="lazy">
-          <figcaption>
-            <h3>Шоколадный RAW торт</h3>
-            <span class="price">1 600 ₽</span>
-          </figcaption>
-        </figure>
-        <figure class="dessert-card">
-          <img src="img/raw-candy.jpg" alt="RAW конфеты — шоколадная конфета с орехами" loading="lazy">
-          <figcaption>
-            <h3>RAW конфеты</h3>
-            <span class="price">150 ₽</span>
-          </figcaption>
-        </figure>
-        <figure class="dessert-card">
-          <img src="img/bento-dessert.jpg" alt="Бенто-десерт с фиговым и кокосовой стружкой" loading="lazy">
-          <figcaption>
-            <h3>Бенто-десерт</h3>
-            <span class="price price--placeholder">[ЗАПОЛНИТЬ]</span>
-          </figcaption>
-        </figure>
-        <figure class="dessert-card">
-          <img src="img/bird-milk-cake.jpg" alt="Торт Птичье молоко — крем-бриошь с шоколадной глазурью" loading="lazy">
-          <figcaption>
-            <h3>«Птичье молоко»</h3>
-            <span class="price price--placeholder">[ЗАПОЛНИТЬ]</span>
-          </figcaption>
-        </figure>
-        <figure class="dessert-card">
-          <img src="img/tart.jpg" alt="Тарт с миндалём и мёдом на жёлтой тарелке" loading="lazy">
-          <figcaption>
-            <h3>Тарт</h3>
-            <span class="price price--placeholder">[ЗАПОЛНИТЬ]</span>
-          </figcaption>
-        </figure>
+      <div class="game-wrapper">
+        <div class="game-header">
+          <span class="section-tag section-tag--light">Бесплатно, без регистрации</span>
+          <h2 class="section-title section-title--light">Две игры — одна скидка 10%</h2>
+          <p class="game-header__sub">Выберите, во что играть. Пройдите любую игру — получите <strong>скидку 10%</strong> на заказ.</p>
+        </div>
+
+        <div class="game-switch" role="tablist">
+          <button class="game-switch__btn game-switch__btn--active" data-game="quiz">🧠 Викторина о питании</button>
+          <button class="game-switch__btn" data-game="apples">🍎 Собери яблоки</button>
+        </div>
+
+        <!-- Игра 1: викторина -->
+        <div class="game-box" id="gameBoxQuiz">
+          <div class="game-screen game-screen--start" id="gameStart">
+            <div class="game-start__emoji">🧠🍎</div>
+            <h3>5 вопросов. 2 минуты. Скидка 10%.</h3>
+            <p>Нет правильных ответов «для гиков». Всё просто и понятно — как объяснил бы друг за столом.</p>
+            <button class="btn btn--primary btn--lg" id="gameStartBtn">Начать викторину →</button>
+          </div>
+
+          <div class="game-screen game-screen--hidden" id="gameQuestion">
+            <div class="game-progress"><div class="game-progress__bar" id="gameProgressBar"></div></div>
+            <p class="game-question-counter" id="gameCounter">Вопрос 1 из 5</p>
+            <h3 class="game-question-text" id="gameQuestionText"></h3>
+            <div class="game-options" id="gameOptions"></div>
+            <div class="game-feedback" id="gameFeedback"></div>
+          </div>
+
+          <div class="game-screen game-screen--hidden" id="gameResult">
+            <div class="game-result__emoji" id="gameResultEmoji">🏆</div>
+            <h3 id="gameResultTitle"></h3>
+            <p class="game-result__text" id="gameResultText"></p>
+            <div class="game-discount" id="gameDiscount">
+              <div class="game-discount__code" id="discountCode"></div>
+              <p>Покажите этот код при заказе или впишите в поле «Промокод» в форме ниже</p>
+            </div>
+            <button class="btn btn--primary btn--lg" id="gameRestartBtn">Пройти ещё раз</button>
+          </div>
+        </div>
+
+        <!-- Игра 2: яблоки -->
+        <div class="game-box game-box--hidden" id="gameBoxApples">
+          <div class="game-screen game-screen--start" id="applesStart">
+            <div class="game-start__emoji">🍎🧺</div>
+            <h3>Соберите 15 яблок за 30 секунд</h3>
+            <p>Двигайте корзину мышью или стрелками ← →. На телефоне — ведите пальцем по экрану. Соберите 15 яблок — скидка 10% ваша.</p>
+            <button class="btn btn--primary btn--lg" id="applesStartBtn">Играть →</button>
+          </div>
+
+          <div class="game-screen game-screen--hidden" id="applesPlay">
+            <div class="apples-hud">
+              <span>🍎 <strong id="applesScore">0</strong> / 15</span>
+              <span>⏱ <strong id="applesTimer">30</strong> с</span>
+            </div>
+            <canvas id="applesCanvas" width="640" height="420"></canvas>
+            <p class="apples-hint">← → или мышь / палец</p>
+          </div>
+
+          <div class="game-screen game-screen--hidden" id="applesResult">
+            <div class="game-result__emoji" id="applesResultEmoji">🍎</div>
+            <h3 id="applesResultTitle"></h3>
+            <p class="game-result__text" id="applesResultText"></p>
+            <div class="game-discount" id="applesDiscount" hidden>
+              <div class="game-discount__code" id="applesCode"></div>
+              <p>Покажите этот код при заказе или впишите в поле «Промокод» в форме ниже</p>
+            </div>
+            <button class="btn btn--primary btn--lg" id="applesRestartBtn">Играть ещё раз</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Бонусная программа -->
+  <!-- ЗАКАЗ -->
+  <section class="cake-section" id="cake">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">На заказ</span>
+        <h2 class="section-title">Десерты без сахара, которые не стыдно поставить на стол</h2>
+        <p class="section-subtitle">RAW-десерты, тарты и конфеты ручной работы. Без глютена, лактозы и рафинированного сахара — под ваш праздник</p>
+      </div>
+
+      <div class="cake-layout">
+        <div class="cake-gallery">
+          <div class="cake-gallery__main">
+            <img src="img/cake-raw.jpg" alt="RAW-торт" class="cake-gallery__img active" data-index="0">
+            <span class="cake-gallery__hint">Нажмите, чтобы увеличить</span>
+          </div>
+          <div class="cake-gallery__thumbs" id="cakeThumbs">
+            <button class="cake-thumb cake-thumb--active" data-index="0"><img src="img/cake-raw.jpg" alt="RAW-торт с кешью кремом (веганский)"></button>
+            <button class="cake-thumb" data-index="1"><img src="img/cake-bird-milk.jpg" alt="Птичье молоко (веганское)"></button>
+            <button class="cake-thumb" data-index="2"><img src="img/cake-bento.jpg" alt="RAW-десерт (веганский)"></button>
+            <button class="cake-thumb" data-index="3"><img src="img/cake-tart.jpg" alt="Тарт (веганский)"></button>
+            <button class="cake-thumb" data-index="4"><img src="img/cake-raw-candy.jpg" alt="RAW-конфеты (веганские)"></button>
+            <button class="cake-thumb" data-index="5"><img src="img/dates-chocolate.jpg" alt="Финики с урбечем в шоколаде (веганские)"></button>
+            <button class="cake-thumb" data-index="6"><img src="img/urbech.jpg" alt="Дагестанский урбеч"></button>
+          </div>
+        </div>
+
+        <div class="cake-form-wrapper">
+          <!-- Форма отправляется в Tuqo: подставьте action из панели «Формы» -->
+          <form class="cake-form" id="cakeForm" novalidate
+                method="POST"
+                action="https://tuqo.ru/api/forms/submit"
+                data-tuqo-endpoint="">
+            <input type="hidden" name="_subject" value="Новый заказ десерта — Подножный корм">
+            <input type="hidden" name="order_number" id="orderNumberField" value="">
+            <input type="hidden" name="estimate" id="estimateField" value="">
+
+            <h3 class="cake-form__title">Заказать десерт</h3>
+            <p class="cake-form__hint">Заполните форму — перезвоним в течение часа и уточним детали</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cakeName">Ваше имя *</label>
+                <input type="text" id="cakeName" name="name" placeholder="Как к вам обращаться?" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="cakePhone">Телефон *</label>
+                <input type="tel" id="cakePhone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cakeType">Что заказываем? *</label>
+              <select id="cakeType" name="type" required>
+                <option value="" disabled selected>Выберите вариант</option>
+                <option value="raw-tort">RAW-торт с кешью кремом (веганский)</option>
+                <option value="bird-milk">Птичье молоко (веганское)</option>
+                <option value="raw-dessert">RAW-десерт (веганский)</option>
+                <option value="tart">Тарт (веганский)</option>
+                <option value="raw-candy">RAW-конфеты (веганские)</option>
+                <option value="dates-urbech">Финики с урбечем в шоколаде (веганские)</option>
+                <option value="urbech">Дагестанский урбеч</option>
+              </select>
+            </div>
+
+            <!-- Пояснение + фото выбранного варианта -->
+            <div class="product-info" id="productInfo" hidden>
+              <img class="product-info__img" id="productImg" src="" alt="">
+              <div class="product-info__body">
+                <h4 class="product-info__name" id="productName"></h4>
+                <p class="product-info__desc" id="productDesc"></p>
+              </div>
+            </div>
+
+            <!-- Подвариант (вкус / вид) -->
+            <div class="form-group" id="variantGroup" hidden>
+              <label for="cakeVariant" id="variantLabel">Вкус</label>
+              <select id="cakeVariant" name="variant"></select>
+            </div>
+
+            <!-- Вес / количество -->
+            <div class="form-group" id="weightGroup" hidden>
+              <label for="cakeWeight" id="weightLabel">Вес</label>
+              <select id="cakeWeight" name="weight"></select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cakeDate">Дата</label>
+                <input type="date" id="cakeDate" name="date" min="">
+              </div>
+              <div class="form-group">
+                <label for="cakeTime">Время</label>
+                <input type="time" id="cakeTime" name="time" min="08:00" max="20:00" step="900">
+              </div>
+            </div>
+
+            <!-- Способ получения -->
+            <fieldset class="delivery-fieldset">
+              <legend>Как получить заказ?</legend>
+              <label class="radio-card">
+                <input type="radio" name="fulfillment" value="pickup" checked>
+                <span class="radio-card__body">
+                  <strong>Самовывоз из кафе</strong>
+                  <small>ул. Цимлянская, 12к13 · бесплатно</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="fulfillment" value="delivery">
+                <span class="radio-card__body">
+                  <strong>Доставка Яндекс.Доставкой</strong>
+                  <small>Стоимость и срок рассчитывает сервис по адресу</small>
+                </span>
+              </label>
+            </fieldset>
+
+            <!-- Адрес доставки -->
+            <div class="delivery-address" id="deliveryAddress" hidden>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="addrCity">Город *</label>
+                  <input type="text" id="addrCity" name="city" placeholder="Сочи / Сириус">
+                </div>
+                <div class="form-group">
+                  <label for="addrStreet">Улица *</label>
+                  <input type="text" id="addrStreet" name="street" placeholder="ул. Цимлянская">
+                </div>
+              </div>
+              <div class="form-row form-row--3">
+                <div class="form-group">
+                  <label for="addrHouse">Дом *</label>
+                  <input type="text" id="addrHouse" name="house" placeholder="12к13">
+                </div>
+                <div class="form-group">
+                  <label for="addrEntrance">Подъезд</label>
+                  <input type="text" id="addrEntrance" name="entrance" placeholder="2">
+                </div>
+                <div class="form-group">
+                  <label for="addrFloor">Этаж</label>
+                  <input type="text" id="addrFloor" name="floor" placeholder="5">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="addrFlat">Квартира / офис</label>
+                  <input type="text" id="addrFlat" name="flat" placeholder="45">
+                </div>
+                <div class="form-group">
+                  <label for="addrIntercom">Код домофона</label>
+                  <input type="text" id="addrIntercom" name="intercom" placeholder="1234#">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="addrComment">Комментарий курьеру</label>
+                <textarea id="addrComment" name="delivery_comment" rows="2" placeholder="Как вас найти, куда звонить"></textarea>
+              </div>
+              <p class="delivery-note">💡 Доставка оплачивается отдельно по тарифу Яндекс.Доставки — назовём сумму при подтверждении заказа.</p>
+            </div>
+
+            <!-- Стоимость -->
+            <div class="cake-estimate" id="cakeEstimate" hidden>
+              <div class="cake-estimate__row">
+                <span>Стоимость (без доставки)</span>
+                <strong id="cakeEstimateValue"></strong>
+              </div>
+              <small id="cakeEstimateNote">Точную стоимость подтвердим по телефону</small>
+            </div>
+
+            <div class="form-group">
+              <label for="cakeWish">Пожелания</label>
+              <textarea id="cakeWish" name="wish" rows="3" placeholder="Надпись, аллергии, повод — всё, что хотите учесть"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cakePromo">Промокод</label>
+              <input type="text" id="cakePromo" name="promo" placeholder="Например: ZHIVY-42">
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full btn--lg">Отправить заявку 🎂</button>
+            <p class="form-note">Перезвоним в течение часа в рабочее время (08:00–20:00). Без предоплаты — платите при получении.</p>
+          </form>
+
+          <!-- Экран успешной заявки -->
+          <div class="cake-success" id="cakeSuccess" hidden>
+            <div class="cake-success__icon">✅</div>
+            <h3 class="cake-success__title">Заявка принята!</h3>
+            <p class="cake-success__label">Номер вашего заказа:</p>
+            <div class="cake-success__number" id="successOrderNumber">—</div>
+            <p class="cake-success__note">Сохраните номер — по нему мы найдём ваш заказ.<br>Перезвоним в течение часа (08:00–20:00).</p>
+
+            <button type="button" class="btn btn--primary btn--full" id="sendTelegramBtn">✈️ Отправить детали в Telegram</button>
+
+            <div class="cake-success__copy">
+              <label for="orderSummaryText">Детали заказа</label>
+              <textarea id="orderSummaryText" readonly rows="7"></textarea>
+              <button type="button" class="btn btn--outline btn--full" id="copyOrderBtn">📋 Скопировать детали заказа</button>
+            </div>
+
+            <button type="button" class="btn btn--ghost btn--full" id="newOrderBtn">＋ Сформировать новый заказ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- АФИША -->
+  <section class="afisha" id="afisha">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Афиша</span>
+        <h2 class="section-title">Что было в кафе</h2>
+        <p class="section-subtitle">Мастер-классы, игры, клубы и живые встречи, которые уже прошли в «Подножном корме». Листайте — и присоединяйтесь в следующий раз</p>
+      </div>
+
+      <div class="carousel">
+        <button class="carousel__arrow carousel__arrow--prev" id="afishaPrev" aria-label="Предыдущий слайд">‹</button>
+        <div class="carousel__track" id="afishaTrack">
+
+          <article class="afisha-card">
+            <div class="afisha-card__media">
+              <img src="https://tg.i-c-a.su/media/podnozhnyj_korm/2072/5445136246721159054_y_2.jpg" alt="«ЛИЛА» 🦚" loading="lazy"
+                   onerror="this.onerror=null;this.src='img/drink-cacao.jpg'">
+              <span class="afisha-card__date">13 ноября · 13:00</span>
+            </div>
+            <div class="afisha-card__body">
+              <span class="afisha-card__tag">Трансформационная игра</span>
+              <h3>«ЛИЛА» 🦚</h3>
+              <p class="afisha-card__price">2 000 ₽ · напиток включён</p>
+              <p class="afisha-card__desc">Древняя ведическая трансформационная игра. Помогает найти ответы на жизненные вопросы, определить свой путь и достичь поставленных целей. Разговор с Душой — без психологии. Группа до 4 человек.</p>
+              <p class="afisha-card__book">Бронь: @viki_astro_soul · +7 911 816-50-09 (Виктория)</p>
+              <a href="https://t.me/podnozhnyj_korm/2072" target="_blank" rel="noopener" class="afisha-card__link">Подробнее в Telegram →</a>
+            </div>
+          </article>
+          <article class="afisha-card">
+            <div class="afisha-card__media">
+              <img src="https://tg.i-c-a.su/media/podnozhnyj_korm/2066/5436135597291543583_y_2.jpg" alt="«Полянка» 🤗" loading="lazy"
+                   onerror="this.onerror=null;this.src='img/menu-breakfast.jpg'">
+              <span class="afisha-card__date">7 ноября · 16:00–19:30</span>
+            </div>
+            <div class="afisha-card__body">
+              <span class="afisha-card__tag">Живая музыка</span>
+              <h3>«Полянка» 🤗</h3>
+              <p class="afisha-card__price">Вход свободный + напиток или десерт</p>
+              <p class="afisha-card__desc">Мероприятие для тех, кто ценит красоту, мягкость и естественность в музыке и общении. Знакомимся, запускаем гитару по кругу и поём вместе, читаем стихи, пьём напитки и едим десерты. Свои инструменты — берите с собой: гитары, укулеле, барабаны, перкуссия.</p>
+              <p class="afisha-card__book">Просто приходите — вход свободный</p>
+              <a href="https://t.me/podnozhnyj_korm/2066" target="_blank" rel="noopener" class="afisha-card__link">Подробнее в Telegram →</a>
+            </div>
+          </article>
+          <article class="afisha-card">
+            <div class="afisha-card__media">
+              <img src="https://tg.i-c-a.su/media/podnozhnyj_korm/2062/5431522244069891305_w_2.jpg" alt="«Зверомикс» 🐶🐱" loading="lazy"
+                   onerror="this.onerror=null;this.src='img/drink-dagestan-cappuccino.jpg'">
+              <span class="afisha-card__date">7 ноября · 13:00–15:00</span>
+            </div>
+            <div class="afisha-card__body">
+              <span class="afisha-card__tag">Встреча с питомцами</span>
+              <h3>«Зверомикс» 🐶🐱</h3>
+              <p class="afisha-card__price">Вход свободный + напиток или десерт</p>
+              <p class="afisha-card__desc">Приходите не одни, а со своими пушистыми (или лысенькими) хвостатыми друзьями. Знакомимся, играем, обсуждаем корм, прогулки и проживание, делимся опытом и знакомим питомцев. Поговорим, куда можно и куда нельзя в Сочи и Сириусе с четвероногими.</p>
+              <p class="afisha-card__book">Вход свободный, обязательное условие — напиток или десерт</p>
+              <a href="https://t.me/podnozhnyj_korm/2062" target="_blank" rel="noopener" class="afisha-card__link">Подробнее в Telegram →</a>
+            </div>
+          </article>
+          <article class="afisha-card">
+            <div class="afisha-card__media">
+              <img src="https://tg.i-c-a.su/media/podnozhnyj_korm/2058/5426933011384575586_y_2.jpg" alt="Плетение из бусин ✨" loading="lazy"
+                   onerror="this.onerror=null;this.src='img/cake-tart.jpg'">
+              <span class="afisha-card__date">7 ноября · 11:00</span>
+            </div>
+            <div class="afisha-card__body">
+              <span class="afisha-card__tag">Мастер-класс</span>
+              <h3>Плетение из бусин ✨</h3>
+              <p class="afisha-card__price">2 500 ₽ · материалы и напиток включены</p>
+              <p class="afisha-card__desc">Авторский мастер-класс: знакомимся с техникой плетения, из которой можно создавать сумки, обвесы и шкатулки. Пошагово соберём сумочку для любимого напитка — кофе или какао. Изделие забираете с собой. Сумочку сделают даже те, кто ни разу не брал в руки бусины.</p>
+              <p class="afisha-card__book">Запись: @tatianakonsta</p>
+              <a href="https://t.me/podnozhnyj_korm/2058" target="_blank" rel="noopener" class="afisha-card__link">Подробнее в Telegram →</a>
+            </div>
+          </article>
+          <article class="afisha-card">
+            <div class="afisha-card__media">
+              <img src="https://tg.i-c-a.su/media/podnozhnyj_korm/2047/5411577274940725681_y_2.jpg" alt="Тыквенный мастер-класс 🎃" loading="lazy"
+                   onerror="this.onerror=null;this.src='img/cake-bento.jpg'">
+              <span class="afisha-card__date">31 октября · 14:00</span>
+            </div>
+            <div class="afisha-card__body">
+              <span class="afisha-card__tag">Флористика</span>
+              <h3>Тыквенный мастер-класс 🎃</h3>
+              <p class="afisha-card__price">1 500 ₽ по промокоду «КОРМ» (обычно 1 800 ₽)</p>
+              <p class="afisha-card__desc">Флористы бутика 2i покажут, как собрать композицию прямо в настоящей тыкве. Подберём сезонные цветы, ягоды и зелень, готовое украшение заберёте домой — отличный декор или подарок близким. Опыт не нужен, материалы предоставим, в комплекте согревающий напиток.</p>
+              <p class="afisha-card__book">Запись: WhatsApp +7 982 413-34-46 · @irinaguseva2 (Ирина)</p>
+              <a href="https://t.me/podnozhnyj_korm/2047" target="_blank" rel="noopener" class="afisha-card__link">Подробнее в Telegram →</a>
+            </div>
+          </article>
+          <article class="afisha-card">
+            <div class="afisha-card__media">
+              <img src="https://tg.i-c-a.su/media/podnozhnyj_korm/2042/5319139610111712467_y_2.jpg" alt="«Мягкая сила» 🤍" loading="lazy"
+                   onerror="this.onerror=null;this.src='img/cake-raw.jpg'">
+              <span class="afisha-card__date">1 октября · сбор 11:30, встреча 12:00–14:00</span>
+            </div>
+            <div class="afisha-card__body">
+              <span class="afisha-card__tag">Женский клуб</span>
+              <h3>«Мягкая сила» 🤍</h3>
+              <p class="afisha-card__price">Бесплатно + напиток или десерт</p>
+              <p class="afisha-card__desc">Пространство для общения, новых знакомств и взаимной поддержки. Тема встречи — «Отношения как божественный дар». Приглашённый эксперт — Диана Милошенко, трансперсональный психолог. Поговорим о том, что мешает нам любить, как говорить о важном без страха и строить отношения, в которых можно оставаться собой.</p>
+              <p class="afisha-card__book">Запись: @MarinaYogaLove (Марина)</p>
+              <a href="https://t.me/podnozhnyj_korm/2042" target="_blank" rel="noopener" class="afisha-card__link">Подробнее в Telegram →</a>
+            </div>
+          </article>
+          <article class="afisha-card">
+            <div class="afisha-card__media">
+              <img src="https://tg.i-c-a.su/media/podnozhnyj_korm/2044/5341269575133242846_y_2.jpg" alt="«Когда и как повышать нагрузку?» 🏋️‍♀️" loading="lazy"
+                   onerror="this.onerror=null;this.src='img/cake-raw-candy.jpg'">
+              <span class="afisha-card__date">9 октября · 18:00</span>
+            </div>
+            <div class="afisha-card__body">
+              <span class="afisha-card__tag">Практикум</span>
+              <h3>«Когда и как повышать нагрузку?» 🏋️‍♀️</h3>
+              <p class="afisha-card__price">Вход свободный + напиток или десерт</p>
+              <p class="afisha-card__desc">Живой практикум для тех, кто хочет прогрессировать в тренировках, но боится за суставы и поясницу. Разберём 3 критерия прогрессии, пройдём 4 живых теста функциональности (голеностоп, контроль таза, дыхание 360°, грудной отдел), получим чек-лист безопасного роста и 15-минутную преднастройку перед тренировкой.</p>
+              <p class="afisha-card__book">Спикер: Елена Рогачева @xelenCf — магистр физической культуры и спорта</p>
+              <a href="https://t.me/podnozhnyj_korm/2044" target="_blank" rel="noopener" class="afisha-card__link">Подробнее в Telegram →</a>
+            </div>
+          </article>
+          <article class="afisha-card">
+            <div class="afisha-card__media">
+              <img src="https://tg.i-c-a.su/media/podnozhnyj_korm/2034/5242686619557503526_y_2.jpg" alt="Разговорный English club 🇬🇧" loading="lazy"
+                   onerror="this.onerror=null;this.src='img/urbech.jpg'">
+              <span class="afisha-card__date">6 сентября · 17:00</span>
+            </div>
+            <div class="afisha-card__body">
+              <span class="afisha-card__tag">Английский клуб</span>
+              <h3>Разговорный English club 🇬🇧</h3>
+              <p class="afisha-card__price">Бесплатно + напиток или десерт</p>
+              <p class="afisha-card__desc">Если давно хотели подтянуть язык, разговориться и освежить грамматику в кругу единомышленников — давайте делать это вместе. Живая практика и преодоление языкового барьера, разбор грамматики простым языком, комфортная атмосфера. Ваш уровень неважен — все пришли учиться.</p>
+              <p class="afisha-card__book">Запись: @kateeva05</p>
+              <a href="https://t.me/podnozhnyj_korm/2034" target="_blank" rel="noopener" class="afisha-card__link">Подробнее в Telegram →</a>
+            </div>
+          </article>
+        </div>
+        <button class="carousel__arrow carousel__arrow--next" id="afishaNext" aria-label="Следующий слайд">›</button>
+      </div>
+      <div class="carousel__dots" id="afishaDots"></div>
+    </div>
+  </section>
+
+  <!-- БОНУСЫ -->
   <section class="bonus" id="bonus">
     <div class="container">
-      <h2 class="section-title">Бонусная программа</h2>
-      <p class="section-subtitle">Копите баллы с каждого заказа и получайте подарки</p>
-
-      <div class="bonus__grid">
-        <div class="bonus-card bonus-card--highlight">
-          <span class="bonus-card__icon" aria-hidden="true">🎉</span>
-          <h3>При регистрации</h3>
-          <p class="bonus-card__value">111 бонусов</p>
-          <p>Приветственные бонусы сразу после создания аккаунта</p>
-        </div>
-        <div class="bonus-card">
-          <span class="bonus-card__icon" aria-hidden="true">💰</span>
-          <h3>За каждый заказ</h3>
-          <p class="bonus-card__value">[ЗАПОЛНИТЬ: X% от суммы]</p>
-          <p>Бонусы начисляются автоматически при оплате через QR-код</p>
-        </div>
-        <div class="bonus-card">
-          <span class="bonus-card__icon" aria-hidden="true">🎁</span>
-          <h3>При достижении N бонусов</h3>
-          <p class="bonus-card__value">[ЗАПОЛНИТЬ: скидка или подарок]</p>
-          <p>Уровень лояльности растёт вместе с вами</p>
-        </div>
+      <div class="section-header">
+        <span class="section-tag">Вернётся к вам</span>
+        <h2 class="section-title">Бонусная программа</h2>
+        <p class="section-subtitle">Каждый заказ делает следующий дешевле</p>
       </div>
 
-      <div class="bonus__rules">
-        <h3>Правила программы</h3>
-        <ul>
-          <li>Бонусы начисляются за каждый оплаченный заказ</li>
-          <li>Списание бонусов: [ЗАПОЛНИТЬ: до X% от суммы заказа]</li>
-          <li>Срок действия бонусов: [ЗАПОЛНИТЬ: N дней]</li>
-          <li>QR-код — персональный, одноразовый токен обновляется каждые 5 минут</li>
-          <li>[ЗАПОЛНИТЬ: ограничения и исключения]</li>
-        </ul>
+      <div class="bonus-cards">
+        <div class="bonus-card bonus-card--highlight">
+          <span class="bonus-card__icon">🎁</span>
+          <h3 class="bonus-card__big">−10%</h3>
+          <p class="bonus-card__lead">на первый заказ</p>
+          <p class="bonus-card__text">Откройте бонусную карту по номеру телефона — и скидка 10% сразу в силе</p>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__icon">💰</span>
+          <h3>Баллы за каждый заказ</h3>
+          <p>Начисляются автоматически при оплате QR-кодом у кассы</p>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__icon">🎉</span>
+          <h3>Подарки за лояльность</h3>
+          <p>Чем чаще заходите — тем щедрее подарки от кафе</p>
+        </div>
       </div>
 
       <div class="bonus__cta">
-        <button class="btn btn--primary btn--lg" id="joinBonusBtn">Получить бонусную карту</button>
-        <button class="btn btn--outline btn--lg" id="showQrBtn">Открыть QR-код</button>
+        <a href="tel:+79220266646" class="btn btn--primary btn--lg">Открыть карту по телефону</a>
       </div>
     </div>
   </section>
 
-  <!-- Отзывы -->
+  <!-- ОТЗЫВЫ -->
   <section class="reviews" id="reviews">
     <div class="container">
-      <h2 class="section-title">Отзывы гостей</h2>
-      <div class="reviews__rating">
-        <span class="reviews__stars" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
-        <span class="reviews__score">5.0</span>
-        <span class="reviews__count">на основе отзывов Яндекс.Карт</span>
+      <div class="section-header">
+        <span class="section-tag">Гости говорят</span>
+        <h2 class="section-title"><span class="reviews__rating">★★★★★ 5,0</span> — оценки гостей</h2>
+        <p class="section-subtitle">Нам пишут те, кто заходит на завтрак, за кофе с урбечом и за десертом без сахара</p>
       </div>
       <div class="reviews__grid">
         <blockquote class="review-card">
-          <p class="review-card__text">[ЗАПОЛНИТЬ: текст отзыва №1 из Яндекс.Карт]</p>
-          <footer class="review-card__author">— Гость, Яндекс.Карты</footer>
+          <p class="review-card__stars">★★★★★</p>
+          <p class="review-card__text">«Милая концепция. Доброжелательный бармен (Юлия). Кофе с тыквенным урбечем и специями прямо приятно удивил)»</p>
+          <footer class="review-card__author">Sergey Z · гость кафе</footer>
         </blockquote>
         <blockquote class="review-card">
-          <p class="review-card__text">[ЗАПОЛНИТЬ: текст отзыва №2 из Яндекс.Карт]</p>
-          <footer class="review-card__author">— Гость, Яндекс.Карты</footer>
+          <p class="review-card__stars">★★★★★</p>
+          <p class="review-card__text">«Моя любимая кофейня. Особенно для тех, кто не ест молочку, глютен и т.д. Отличное место 😍 Завтраки тоже вкусные и полезные»</p>
+          <footer class="review-card__author">Виктория Борзова · гость кафе</footer>
         </blockquote>
         <blockquote class="review-card">
-          <p class="review-card__text">[ЗАПОЛНИТЬ: текст отзыва №3 из Яндекс.Карт]</p>
-          <footer class="review-card__author">— Гость, Яндекс.Карты</footer>
+          <p class="review-card__stars">★★★★★</p>
+          <p class="review-card__text">«Комфортная атмосфера в кафе. Люблю сюда приходить 😊 Особенно нравится дагестанский капучино, нигде такой не пробовала!»</p>
+          <footer class="review-card__author">Екатерина Дмитриева · гость кафе</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <p class="review-card__stars">★★★★★</p>
+          <p class="review-card__text">«Среди всего дорогого но во многом однообразного, есть это прекрасное заведение с замечательными завтраками, вкусным кофе, полезными сладостями. Процветания вам!»</p>
+          <footer class="review-card__author">Надежное Мнение · гость кафе</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <p class="review-card__stars">★★★★★</p>
+          <p class="review-card__text">«Красиво, вкусно, осознанно. Одно из редких мест, где не продают алкоголь. По выходным проводятся интересные мастер-классы, нетворкинг. И море рядом, в двух шагах!»</p>
+          <footer class="review-card__author">Анжелика Ильченко · гость кафе</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <p class="review-card__stars">★★★★★</p>
+          <p class="review-card__text">«Это для тех, кто за ЗОЖ! Тут завтраки весь день и очень вкусные. Большое меню, смешное меню, юморные названия. И можно посетить разные мероприятия и мастер-классы.»</p>
+          <footer class="review-card__author">Дмитрий · гость кафе</footer>
         </blockquote>
       </div>
-      <p class="reviews__note">* Тексты отзывов будут добавлены вручную из Яндекс.Карт (страница рендерится JS и недоступна для автоматического извлечения)</p>
+      <div class="reviews__cta">
+        <a href="https://yandex.ru/maps/-/CXC0iM6D" target="_blank" rel="noopener" class="btn btn--outline btn--lg">Читать все отзывы на Яндекс.Картах →</a>
+      </div>
     </div>
   </section>
 
-  <!-- Контакты -->
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container final-cta__inner">
+      <div class="final-cta__bg">
+        <img src="img/cake-raw.jpg" alt="" loading="lazy">
+        <div class="final-cta__overlay"></div>
+      </div>
+      <div class="final-cta__content">
+        <h2>Голодны уже?</h2>
+        <p>Мы открыты. Приходите — или закажите десерт на выходных.</p>
+        <div class="final-cta__buttons">
+          <a href="#cake" class="btn btn--white btn--lg">🎂 Заказать десерт</a>
+          <a href="tel:+79220266646" class="btn btn--glass btn--lg">📞 Позвонить</a>
+          <a href="https://t.me/podnozhnyj_korm" target="_blank" rel="noopener" class="btn btn--glass btn--lg">✈️ Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
   <section class="contacts" id="contacts">
     <div class="container">
-      <h2 class="section-title">Контакты</h2>
+      <div class="section-header">
+        <span class="section-tag">Как нас найти</span>
+        <h2 class="section-title">Ждём вас в Сириусе</h2>
+      </div>
       <div class="contacts__grid">
         <div class="contacts__info">
           <div class="contacts__item">
-            <h3>Адрес</h3>
-            <p>ФТ Сириус, ул. Цимлянская, 12к13<br>Вход со стороны улицы Акаций</p>
+            <span class="contacts__icon">📍</span>
+            <div><h3>Адрес</h3><p>ФТ Сириус, ул. Цимлянская, 12к13</p></div>
           </div>
           <div class="contacts__item">
-            <h3>Часы работы</h3>
-            <p>Ежедневно с 08:00 до 20:00</p>
+            <span class="contacts__icon">🕐</span>
+            <div><h3>Часы работы</h3><p>Ежедневно с 08:00 до 20:00</p></div>
           </div>
           <div class="contacts__item">
-            <h3>Телефон</h3>
-            <a href="tel:+79220266646" class="contacts__phone">+7 (922) 026-66-46</a>
+            <span class="contacts__icon">📞</span>
+            <div><h3>Телефон</h3><a href="tel:+79220266646" class="contacts__phone">+7 (922) 026-66-46</a></div>
           </div>
           <div class="contacts__item">
-            <h3>По вопросам сотрудничества</h3>
-            <p>Юлия, <a href="tel:+79220266646">+7 (922) 026-66-46</a></p>
-          </div>
-          <div class="contacts__item">
-            <h3>Telegram</h3>
-            <a href="https://t.me/podnozhnyj_korm" target="_blank" rel="noopener noreferrer" class="contacts__tg">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-              @podnozhnyj_korm
-            </a>
+            <span class="contacts__icon">✈️</span>
+            <div><h3>Telegram</h3><a href="https://t.me/podnozhnyj_korm" target="_blank" rel="noopener" class="contacts__tg">@podnozhnyj_korm</a></div>
           </div>
         </div>
         <div class="contacts__map">
-          <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=39.983160%2C43.389837&z=17&pt=39.983160%2C43.389837%2Cpm2rdm"
-            width="100%" height="300" frameborder="0"
-            title="Карта: кафе Подножный корм, Сириус"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=39.983160%2C43.389837&z=17&pt=39.983160%2C43.389837%2Cpm2rdm"
+            width="100%" height="280" frameborder="0" title="Карта: Подножный корм, Сириус" loading="lazy" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Футер -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="img/logo.jpeg" alt="Подножный корм" width="36" height="36">
-        <span>Кафе здорового питания</span>
+        <img src="img/logo.jpeg" alt="Подножный корм" width="32" height="32">
+        <span>Кафе здорового питания · Сириус</span>
       </div>
-      <div class="footer__hours">
-        <strong>График работы:</strong> ежедневно 08:00 – 20:00
-      </div>
-      <div class="footer__social">
-        <a href="https://t.me/podnozhnyj_korm" target="_blank" rel="noopener noreferrer" aria-label="Telegram канал Подножный корм">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-        </a>
-      </div>
-      <p class="footer__copy">© 2024–2025 «Подножный корм». Все права защищены. · <a href="admin.html" style="text-decoration:underline;opacity:.8;">Для сотрудников</a></p>
+      <p class="footer__copy">© 2025 «Подножный корм» · Ежедневно 08:00 – 20:00</p>
     </div>
   </footer>
 
-  <!-- Мобильная нижняя панель -->
   <nav class="bottom-bar" aria-label="Быстрые действия">
     <a href="#menu" class="bottom-bar__item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
       <span>Меню</span>
     </a>
-    <a href="tel:+79220266646" class="bottom-bar__item bottom-bar__item--primary">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <a href="#game" class="bottom-bar__item bottom-bar__item--accent">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <span>Игры</span>
+    </a>
+    <a href="#cake" class="bottom-bar__item bottom-bar__item--primary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       <span>Заказать</span>
     </a>
-    <button class="bottom-bar__item" id="openQrFromBar">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h7v7h-7z"/></svg>
-      <span>Мой QR</span>
-    </button>
+    <a href="tel:+79220266646" class="bottom-bar__item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Звонок</span>
+    </a>
   </nav>
 
-  <!-- Модалка: Личный кабинет -->
-  <div class="modal" id="cabinetModal" role="dialog" aria-modal="true" aria-labelledby="cabinetTitle">
-    <div class="modal__backdrop" data-close-modal></div>
-    <div class="modal__panel modal__panel--wide">
-      <button class="modal__close" data-close-modal aria-label="Закрыть">&times;</button>
-      <div class="modal__header">
-        <h2 id="cabinetTitle">Личный кабинет</h2>
-      </div>
-
-      <!-- Форма входа / регистрации -->
-      <div class="auth-form" id="authForm">
-        <div class="auth-tabs">
-          <button class="auth-tab auth-tab--active" data-auth-mode="login">Вход</button>
-          <button class="auth-tab" data-auth-mode="register">Регистрация</button>
-        </div>
-
-        <form id="loginForm" class="auth-panel" action="#" novalidate>
-          <label for="loginPhone">Телефон</label>
-          <input type="tel" id="loginPhone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
-          <label for="loginPassword">Пароль</label>
-          <input type="password" id="loginPassword" name="password" placeholder="••••••••" required autocomplete="current-password">
-          <button type="submit" class="btn btn--primary btn--full">Войти</button>
-          <a href="#" class="auth-link" id="forgotPasswordLink">Забыли пароль?</a>
-        </form>
-
-        <form id="registerForm" class="auth-panel auth-panel--hidden" action="#" novalidate>
-          <p class="auth-bonus-hint">🎉 После регистрации вы получите <strong>111 приветственных бонусов</strong></p>
-          <label for="regName">Имя</label>
-          <input type="text" id="regName" name="name" placeholder="Как к вам обращаться?" required autocomplete="name">
-          <label for="regPhone">Телефон</label>
-          <input type="tel" id="regPhone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
-          <label for="regEmail">Email <span class="optional">(необязательно)</span></label>
-          <input type="email" id="regEmail" name="email" placeholder="you@example.com" autocomplete="email">
-          <label for="regPassword">Пароль</label>
-          <input type="password" id="regPassword" name="password" placeholder="Минимум 8 символов" required minlength="8" autocomplete="new-password">
-          <label class="checkbox-label">
-            <input type="checkbox" id="regConsent" required>
-            <span>Я согласен(на) на обработку персональных данных согласно <a href="#" class="auth-link">политике конфиденциальности</a></span>
-          </label>
-          <button type="submit" class="btn btn--primary btn--full">Создать аккаунт</button>
-        </form>
-      </div>
-
-      <!-- Контент кабинета (после входа) -->
-      <div class="cabinet-content" id="cabinetContent" hidden>
-        <div class="cabinet-header">
-          <div class="cabinet-avatar" id="cabinetAvatar">
-            <span id="cabinetInitials">?</span>
-          </div>
-          <div>
-            <p class="cabinet-name" id="cabinetName">Гость</p>
-            <p class="cabinet-phone" id="cabinetPhone"></p>
-          </div>
-          <button class="cabinet-logout" id="logoutBtn" aria-label="Выйти из аккаунта">Выйти</button>
-        </div>
-
-        <div class="cabinet-tabs">
-          <button class="cabinet-tab cabinet-tab--active" data-tab="profile">Профиль</button>
-          <button class="cabinet-tab" data-tab="bonuses">Бонусы</button>
-          <button class="cabinet-tab" data-tab="qr">QR-код</button>
-          <button class="cabinet-tab" data-tab="orders">Заказы</button>
-          <button class="cabinet-tab" data-tab="security">Безопасность</button>
-        </div>
-
-        <!-- Профиль -->
-        <div class="cabinet-panel cabinet-panel--active" data-panel="profile">
-          <form class="profile-form" action="#">
-            <label for="profName">Имя</label>
-            <input type="text" id="profName" value="">
-            <label for="profPhone">Телефон</label>
-            <input type="tel" id="profPhone" value="" readonly>
-            <label for="profEmail">Email</label>
-            <input type="email" id="profEmail" value="">
-            <label for="prefDiet">Предпочтения по питанию</label>
-            <select id="prefDiet">
-              <option value="">Не указано</option>
-              <option value="vegan">Веган</option>
-              <option value="vegetarian">Вегетарианец</option>
-              <option value="gluten-free">Без глютена</option>
-              <option value="lactose-free">Без лактозы</option>
-              <option value="high-protein">Высокобелковое</option>
-            </select>
-            <button type="submit" class="btn btn--primary">Сохранить</button>
-          </form>
-        </div>
-
-        <!-- Бонусы -->
-        <div class="cabinet-panel" data-panel="bonuses">
-          <div class="bonus-balance">
-            <div class="bonus-balance__item">
-              <span class="bonus-balance__label">Текущие бонусы</span>
-              <span class="bonus-balance__value" id="bonusCurrent">0</span>
-            </div>
-            <div class="bonus-balance__item">
-              <span class="bonus-balance__label">Ожидаемые</span>
-              <span class="bonus-balance__value" id="bonusPending">0</span>
-            </div>
-          </div>
-          <h3>История операций</h3>
-          <table class="bonus-history">
-            <thead><tr><th>Дата</th><th>Операция</th><th>Сумма</th></tr></thead>
-            <tbody id="bonusHistoryBody">
-              <tr><td colspan="3" class="empty-state">Нет операций</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- QR-код -->
-        <div class="cabinet-panel" data-panel="qr">
-          <div class="qr-display">
-            <p class="qr-name" id="qrUserName">Гость</p>
-            <div class="qr-box" id="qrBox">
-              <canvas id="qrCanvas" width="200" height="200"></canvas>
-            </div>
-            <div class="qr-timer">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span id="qrTimerText">Обновление через 5:00</span>
-            </div>
-            <p class="qr-security-note">⚠️ QR-код содержит одноразовый токен. Не передавайте его другим лицам. Токен обновляется автоматически каждые 5 минут.</p>
-            <button class="btn btn--outline" id="refreshQrBtn">Обновить QR-код</button>
-          </div>
-        </div>
-
-        <!-- Заказы -->
-        <div class="cabinet-panel" data-panel="orders">
-          <table class="orders-table">
-            <thead><tr><th>Дата</th><th>Состав</th><th>Сумма</th><th>Статус</th><th>Бонусы</th></tr></thead>
-            <tbody id="ordersBody">
-              <tr><td colspan="5" class="empty-state">Заказов пока нет</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Безопасность -->
-        <div class="cabinet-panel" data-panel="security">
-          <h3>Смена пароля</h3>
-          <form class="security-form" action="#">
-            <label for="curPass">Текущий пароль</label>
-            <input type="password" id="curPass" autocomplete="current-password">
-            <label for="newPass">Новый пароль</label>
-            <input type="password" id="newPass" minlength="8" autocomplete="new-password">
-            <label for="confirmPass">Подтвердите новый пароль</label>
-            <input type="password" id="confirmPass" autocomplete="new-password">
-            <button type="submit" class="btn btn--primary">Сменить пароль</button>
-          </form>
-          <hr>
-          <button class="btn btn--danger" id="deleteAccountBtn">Удалить аккаунт</button>
-          <p class="security-note">При удалении аккаунта все данные, включая бонусы, будут безвозвратно удалены.</p>
-        </div>
-      </div>
-    </div>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox__backdrop" data-close-lightbox></div>
+    <button class="lightbox__close" data-close-lightbox aria-label="Закрыть">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Предыдущее фото">‹</button>
+    <figure class="lightbox__figure">
+      <figcaption class="lightbox__caption" id="lbCaption"></figcaption>
+      <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Следующее фото">›</button>
+    <span class="lightbox__counter" id="lbCounter"></span>
   </div>
 
-  <!-- Модалка: QR-код (быстрый доступ) -->
-  <div class="modal" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
-    <div class="modal__backdrop" data-close-modal></div>
-    <div class="modal__panel">
-      <button class="modal__close" data-close-modal aria-label="Закрыть">&times;</button>
-      <div class="modal__header">
-        <h2 id="qrModalTitle">Показать QR сотруднику</h2>
-      </div>
-      <div class="qr-display qr-display--large">
-        <p class="qr-name" id="qrModalName">Гость</p>
-        <div class="qr-box qr-box--large">
-          <canvas id="qrCanvasModal" width="280" height="280"></canvas>
-        </div>
-        <div class="qr-timer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span id="qrModalTimerText">Обновление через 5:00</span>
-        </div>
-        <p class="qr-security-note">Покажите этот код кассиру для идентификации, начисления или списания бонусов.</p>
+  <!-- POPUP СКИДКА -->
+  <div class="popup-discount" id="popupDiscount" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup-discount__backdrop" data-close-popup></div>
+    <div class="popup-discount__panel">
+      <button class="popup-discount__close" data-close-popup aria-label="Закрыть">&times;</button>
+      <div class="popup-discount__content">
+        <div class="popup-discount__badge">🎁 Ваш промокод на первый заказ</div>
+        <h3 id="popupTitle">Скидка 10% на заказ</h3>
+        <p>Покажите этот код кассиру или впишите его в поле «Промокод» в форме заказа:</p>
+        <div class="popup-discount__code" id="popupCode">PRIEM-10</div>
+        <p class="popup-discount__timer">Код действует ещё <strong id="popupTimer">10:00</strong></p>
+        <button class="btn btn--primary btn--full" id="popupApplyBtn">Заказать со скидкой →</button>
+        <p class="popup-discount__once">⚠️ Этот код показывается один раз за визит сайта — скопируйте его или сразу перейдите к заказу, второй раз баннер не появится.</p>
+        <p class="popup-discount__hint">Не успели сохранить код? Не беда — <a href="#game" id="popupGameLink">сыграйте в игру</a>: там можно получить свой промокод на такие же −10%. Скидки не суммируются, действует одна.</p>
       </div>
     </div>
   </div>
